@@ -1,0 +1,62 @@
+### variables the user can touch
+# Path and filename of the excelfile
+excel_file_path = file path
+
+# Column(s) to check for download link
+download_columns = [1, "AM"] # Can be either strings or numbers for readability
+
+# Coloumn to check and write if PDF is already downloaded
+is_downloaded_column = "AB" # Same rule as for download links
+
+# Check if first line of the excel file is a header
+header = TRUE
+
+# Path to folder place downloaded PDF-files
+destination_folder = folder path
+
+# Specify whether to limit downloads and how many downloads to limit to
+restricted_mode = TRUE
+max_downloads = 10
+
+### imports
+
+### function definitions
+# Function to translate column strings into indecies (should leave positive integers as is)
+translate_to_index([list or string or positive integer]): ...
+
+# Function to download a PDF file given a download link and a destination folder
+
+### other variables
+download_columns_indecies = translate_to_index(download_columns) # Maybe this should be in the part where the code runs?
+
+### Part where the code runs
+
+# This part of the code shouldn't run when just importing the functions and variables
+if main == main:
+    # Open the excel file
+    open(excelfile, r)
+
+    i = 0
+    # Read only mode, download the files and add to list which indecies to mark as downloaded
+    loop through file:
+        # Skip download if the file is already downloaded
+        # Otherwise download it and mark it as downloaded
+        if isdownloaded:
+            continue
+        else:
+            download(downloadlink, destinationfolder)
+            isdownloaded.append(cell_index)
+        
+        # Break loop and stop if max permitted downloads is reached (if the script is running in restricted mode)
+        if restricted mode_and i >= max:
+            break
+        
+        # Stop if reached end of excelfile (I might want to use a for loop instead of a while loop for this)
+        if endofexcelfile:
+            break
+
+        i++
+
+    # Write to cells which files where downloaded
+    for i in isdownloaded:
+        cell[i] = TRUE
